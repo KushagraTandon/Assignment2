@@ -1,0 +1,30 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:data="sap.viz.ui5.data" xmlns:feeds="sap.viz.ui5.controls.common.feeds"
+	controllerName="Kushagra_1-11-19_2.Kushagra_1-11-19_2.controller.View1" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="2nd Assignment">
+					<content>
+						<viz:VizFrame vizType="bar">
+							<viz:dataset>
+								<data:FlattenedDataset data="{/employee}">
+									<data:dimensions>
+										<data:DimensionDefinition name="Employee Id" value="{name}"></data:DimensionDefinition>
+									</data:dimensions>
+									<data:measures>
+										<data:MeasureDefinition name="Issue Fixed" value="{issue}"></data:MeasureDefinition>
+									</data:measures>
+								</data:FlattenedDataset>
+							</viz:dataset>
+							<viz:feeds>
+								<feeds:FeedItem type="Dimension" values="Employee Id" uid="categoryAxis"></feeds:FeedItem>
+								<feeds:FeedItem type="Measure" values="Issue Fixed" uid="valueAxis"></feeds:FeedItem>
+							</viz:feeds>
+						</viz:VizFrame>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
